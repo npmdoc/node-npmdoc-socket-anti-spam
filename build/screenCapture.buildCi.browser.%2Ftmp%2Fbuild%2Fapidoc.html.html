@@ -1,0 +1,733 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/michaeldegroot/socket-anti-spam#readme">socket-anti-spam (v1.1.8)</a>
+</h1>
+<h4>This module prevents socket.emit spams by clients via ip bans</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.socket-anti-spam">module socket-anti-spam</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.addSpam">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>addSpam
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.ban">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>ban
+            <span class="apidocSignatureSpan">(data, min)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.getBans">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>getBans
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.init">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>init
+            <span class="apidocSignatureSpan">(sets)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.unBan">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>unBan
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">socket-anti-spam.</span>antiSpam</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">socket-anti-spam.</span>event</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.socket-anti-spam.addSpam">module socket-anti-spam.addSpam</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.addSpam.addSpam">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>addSpam
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.socket-anti-spam.ban">module socket-anti-spam.ban</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.ban.ban">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>ban
+            <span class="apidocSignatureSpan">(data, min)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.socket-anti-spam.getBans">module socket-anti-spam.getBans</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.getBans.getBans">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>getBans
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.socket-anti-spam.init">module socket-anti-spam.init</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.init.init">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>init
+            <span class="apidocSignatureSpan">(sets)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.socket-anti-spam.unBan">module socket-anti-spam.unBan</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.socket-anti-spam.unBan.unBan">
+            function <span class="apidocSignatureSpan">socket-anti-spam.</span>unBan
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.socket-anti-spam" id="apidoc.module.socket-anti-spam">module socket-anti-spam</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.addSpam" id="apidoc.element.socket-anti-spam.addSpam">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>addSpam
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSpam = function (socket) {
+  if (not(socket))
+    throw new Error('socket variable is not defined')
+  authenticate(socket, function(data) {
+    if (data.banned)
+      return
+
+    var lastInteraction = moment.duration(moment().diff(data.lastInteraction)).asSeconds()
+    data.lastInteraction = moment()
+
+    if (lastInteraction &lt; 1)
+      data.score++
+    if (lastInteraction &gt;= 1) {
+      var newScore = data.score - Math.round(lastInteraction)
+      data.score = newScore
+      if (newScore &lt;= 0)
+        data.score = 0
+    }
+
+    var lastLowerKick = moment.duration(moment().diff(data.lastLowerKick)).asSeconds()
+    if (lastLowerKick &gt;= 1800 &amp;&amp; data.kickCount &gt;= 1) {
+      data.lastLowerKick = moment()
+      data.kickCount--
+    }
+
+    eventEmitter.emit('spamscore', socket, data)
+    if (data.score &gt;= options.kickThreshold) {
+      eventEmitter.emit('kick', socket, data)
+      data.score = 0
+      data.kickCount = data.kickCount + 1
+      if (data.kickCount &gt;= options.kickTimesBeforeBan &amp;&amp; options.banning) {
+        eventEmitter.emit('ban', socket, data)
+        clearHeart(socket)
+        data.kickCount = 0
+        data.banned = true
+        data.lastLowerKick = moment()
+        data.bannedUntil = moment().add(options.banTime, 'minutes')
+      }
+
+      socket.disconnect()
+    }
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log(data.score)
+})
+````
+
+## API
+
+
+###  .<span class="apidocCodeKeywordSpan">addSpam</span>(socket)
+```js
+socket:     Object      // The user socket variable
+```
+_Can be used to increase the spam score of a socket, if you set the io variable in the init function you do not need this. Unless
+ you want to do something other then adding a spamscore for every socket emit_
+
+__Example__
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.ban" id="apidoc.element.socket-anti-spam.ban">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>ban
+        <span class="apidocSignatureSpan">(data, min)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ban = function (data, min) {
+  if (not(data))
+    throw new Error('No options defined')
+  if (not(min))
+    min = options.banTime
+  var ip = false
+  if (typeof(users[data]) !='undefined')
+    ip = data
+  if (typeof(users[data.ip]) != 'undefined')
+    ip = data.ip
+  if (ip)
+    return ban(true, ip)
+  return false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+````js
+const antiSpam = require('socket-anti-spam')
+
+const bans = antiSpam.getBans()
+console.log(bans)   // Returns a array full of ip's that are currently banned
+````
+###  .<span class="apidocCodeKeywordSpan">ban</span>(data,minutes)
+```js
+data:       Object / String     //  Can be either socket.ip or a ip in string format you want to ban
+minutes:    Number              // Number in minutes how long the ban will be active, if not supplied default will be used (60)
+```
+_Simply bans a socket or ip_
+
+__Example__ banning a ip in string format
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.getBans" id="apidoc.element.socket-anti-spam.getBans">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>getBans
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBans = function () {
+  var banned = []
+  var user
+  for (user in users) {
+    if (users[user].banned)
+      banned.push({
+        ip:    user,
+        until: users[user].bannedUntil,
+      })
+  }
+
+  return banned
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        antiSpam.addSpam(socket) // Adds a spamscore because this socket sent a emit
+
+        // The rest of your code
+    })
+})
+````
+
+###  .<span class="apidocCodeKeywordSpan">getBans</span>()
+_Returns a array full of ip's that are currently banned_
+
+__Example__
+
+````js
+const antiSpam = require('socket-anti-spam')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.init" id="apidoc.element.socket-anti-spam.init">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>init
+        <span class="apidocSignatureSpan">(sets)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (sets) {
+  if (not(sets.banTime))
+    sets.banTime = defaultOptions.banTime
+  if (not(sets.kickThreshold))
+    sets.kickThreshold = defaultOptions.kickThreshold
+  if (not(sets.kickTimesBeforeBan))
+    sets.kickTimesBeforeBan = defaultOptions.kickTimesBeforeBan
+  if (not(sets.banning))
+    sets.banning = defaultOptions.banning
+  if (not(sets.heartBeatStale))
+    sets.heartBeatStale = defaultOptions.heartBeatStale
+  if (not(sets.heartBeatCheck))
+    sets.heartBeatCheck = defaultOptions.heartBeatCheck
+  if (sets.io) {
+    sets.io.on('connection', function(socket) {
+      var emit = socket.emit
+      socket.emit = function() {
+        if (!socket.banned) {
+          exports.addSpam(socket)
+          emit.apply(socket, arguments)
+        }
+      }
+      authenticate(socket)
+
+      socket.on('disconnect', function() {
+        clearHeart(socket)
+      })
+
+      socket.on('error', function(err) {
+        console.error(err)
+      })
+    })
+  }
+
+  options = sets
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+##### 2. Load the code
+
+```javascript
+const antiSpam  = require('socket-anti-spam')
+const socket-io = require('socket.io').listen(8080)
+
+antiSpam.<span class="apidocCodeKeywordSpan">init</span>({
+    banTime:            30,         // Ban time in minutes
+    kickThreshold:      2,          // User gets kicked after this many spam score
+    kickTimesBeforeBan: 1,          // User gets banned after this many kicks
+    banning:            true,       // Uses temp IP banning after kickTimesBeforeBan
+    heartBeatStale:     40,         // Removes a heartbeat after this many seconds
+    heartBeatCheck:     4,          // Checks a heartbeat per this many seconds
+    io:                 socket-io,  // Bind the socket.io variable
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.unBan" id="apidoc.element.socket-anti-spam.unBan">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>unBan
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unBan = function (data) {
+  if (not(data))
+    throw new Error('No options defined')
+  var ip = false
+  if (typeof(users[data])!='undefined')
+    ip = data
+  if (typeof(users[data.ip])!='undefined')
+    ip = data.ip
+  if (ip) return ban(false, ip)
+  return false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````js
+const antiSpam = require('socket-anti-spam')
+
+io.sockets.on('connection', socket =&gt; {
+    antiSpam.ban(socket, 5)
+})
+````
+###  .<span class="apidocCodeKeywordSpan">unBan</span>(data)
+```js
+data:   Object / String    //  Can be either socket.ip or a ip in string format you want to unban
+```
+_Simply unbans a socket or ip_
+
+__Example__ unbanning a ip in string format
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.socket-anti-spam.addSpam" id="apidoc.module.socket-anti-spam.addSpam">module socket-anti-spam.addSpam</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.addSpam.addSpam" id="apidoc.element.socket-anti-spam.addSpam.addSpam">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>addSpam
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSpam = function (socket) {
+  if (not(socket))
+    throw new Error('socket variable is not defined')
+  authenticate(socket, function(data) {
+    if (data.banned)
+      return
+
+    var lastInteraction = moment.duration(moment().diff(data.lastInteraction)).asSeconds()
+    data.lastInteraction = moment()
+
+    if (lastInteraction &lt; 1)
+      data.score++
+    if (lastInteraction &gt;= 1) {
+      var newScore = data.score - Math.round(lastInteraction)
+      data.score = newScore
+      if (newScore &lt;= 0)
+        data.score = 0
+    }
+
+    var lastLowerKick = moment.duration(moment().diff(data.lastLowerKick)).asSeconds()
+    if (lastLowerKick &gt;= 1800 &amp;&amp; data.kickCount &gt;= 1) {
+      data.lastLowerKick = moment()
+      data.kickCount--
+    }
+
+    eventEmitter.emit('spamscore', socket, data)
+    if (data.score &gt;= options.kickThreshold) {
+      eventEmitter.emit('kick', socket, data)
+      data.score = 0
+      data.kickCount = data.kickCount + 1
+      if (data.kickCount &gt;= options.kickTimesBeforeBan &amp;&amp; options.banning) {
+        eventEmitter.emit('ban', socket, data)
+        clearHeart(socket)
+        data.kickCount = 0
+        data.banned = true
+        data.lastLowerKick = moment()
+        data.bannedUntil = moment().add(options.banTime, 'minutes')
+      }
+
+      socket.disconnect()
+    }
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log(data.score)
+})
+````
+
+## API
+
+
+###  .<span class="apidocCodeKeywordSpan">addSpam</span>(socket)
+```js
+socket:     Object      // The user socket variable
+```
+_Can be used to increase the spam score of a socket, if you set the io variable in the init function you do not need this. Unless
+ you want to do something other then adding a spamscore for every socket emit_
+
+__Example__
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.socket-anti-spam.ban" id="apidoc.module.socket-anti-spam.ban">module socket-anti-spam.ban</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.ban.ban" id="apidoc.element.socket-anti-spam.ban.ban">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>ban
+        <span class="apidocSignatureSpan">(data, min)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ban = function (data, min) {
+  if (not(data))
+    throw new Error('No options defined')
+  if (not(min))
+    min = options.banTime
+  var ip = false
+  if (typeof(users[data]) !='undefined')
+    ip = data
+  if (typeof(users[data.ip]) != 'undefined')
+    ip = data.ip
+  if (ip)
+    return ban(true, ip)
+  return false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+````js
+const antiSpam = require('socket-anti-spam')
+
+const bans = antiSpam.getBans()
+console.log(bans)   // Returns a array full of ip's that are currently banned
+````
+###  .<span class="apidocCodeKeywordSpan">ban</span>(data,minutes)
+```js
+data:       Object / String     //  Can be either socket.ip or a ip in string format you want to ban
+minutes:    Number              // Number in minutes how long the ban will be active, if not supplied default will be used (60)
+```
+_Simply bans a socket or ip_
+
+__Example__ banning a ip in string format
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.socket-anti-spam.getBans" id="apidoc.module.socket-anti-spam.getBans">module socket-anti-spam.getBans</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.getBans.getBans" id="apidoc.element.socket-anti-spam.getBans.getBans">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>getBans
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBans = function () {
+  var banned = []
+  var user
+  for (user in users) {
+    if (users[user].banned)
+      banned.push({
+        ip:    user,
+        until: users[user].bannedUntil,
+      })
+  }
+
+  return banned
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        antiSpam.addSpam(socket) // Adds a spamscore because this socket sent a emit
+
+        // The rest of your code
+    })
+})
+````
+
+###  .<span class="apidocCodeKeywordSpan">getBans</span>()
+_Returns a array full of ip's that are currently banned_
+
+__Example__
+
+````js
+const antiSpam = require('socket-anti-spam')
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.socket-anti-spam.init" id="apidoc.module.socket-anti-spam.init">module socket-anti-spam.init</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.init.init" id="apidoc.element.socket-anti-spam.init.init">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>init
+        <span class="apidocSignatureSpan">(sets)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (sets) {
+  if (not(sets.banTime))
+    sets.banTime = defaultOptions.banTime
+  if (not(sets.kickThreshold))
+    sets.kickThreshold = defaultOptions.kickThreshold
+  if (not(sets.kickTimesBeforeBan))
+    sets.kickTimesBeforeBan = defaultOptions.kickTimesBeforeBan
+  if (not(sets.banning))
+    sets.banning = defaultOptions.banning
+  if (not(sets.heartBeatStale))
+    sets.heartBeatStale = defaultOptions.heartBeatStale
+  if (not(sets.heartBeatCheck))
+    sets.heartBeatCheck = defaultOptions.heartBeatCheck
+  if (sets.io) {
+    sets.io.on('connection', function(socket) {
+      var emit = socket.emit
+      socket.emit = function() {
+        if (!socket.banned) {
+          exports.addSpam(socket)
+          emit.apply(socket, arguments)
+        }
+      }
+      authenticate(socket)
+
+      socket.on('disconnect', function() {
+        clearHeart(socket)
+      })
+
+      socket.on('error', function(err) {
+        console.error(err)
+      })
+    })
+  }
+
+  options = sets
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+##### 2. Load the code
+
+```javascript
+const antiSpam  = require('socket-anti-spam')
+const socket-io = require('socket.io').listen(8080)
+
+antiSpam.<span class="apidocCodeKeywordSpan">init</span>({
+    banTime:            30,         // Ban time in minutes
+    kickThreshold:      2,          // User gets kicked after this many spam score
+    kickTimesBeforeBan: 1,          // User gets banned after this many kicks
+    banning:            true,       // Uses temp IP banning after kickTimesBeforeBan
+    heartBeatStale:     40,         // Removes a heartbeat after this many seconds
+    heartBeatCheck:     4,          // Checks a heartbeat per this many seconds
+    io:                 socket-io,  // Bind the socket.io variable
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.socket-anti-spam.unBan" id="apidoc.module.socket-anti-spam.unBan">module socket-anti-spam.unBan</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.socket-anti-spam.unBan.unBan" id="apidoc.element.socket-anti-spam.unBan.unBan">
+        function <span class="apidocSignatureSpan">socket-anti-spam.</span>unBan
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unBan = function (data) {
+  if (not(data))
+    throw new Error('No options defined')
+  var ip = false
+  if (typeof(users[data])!='undefined')
+    ip = data
+  if (typeof(users[data.ip])!='undefined')
+    ip = data.ip
+  if (ip) return ban(false, ip)
+  return false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+````js
+const antiSpam = require('socket-anti-spam')
+
+io.sockets.on('connection', socket =&gt; {
+    antiSpam.ban(socket, 5)
+})
+````
+###  .<span class="apidocCodeKeywordSpan">unBan</span>(data)
+```js
+data:   Object / String    //  Can be either socket.ip or a ip in string format you want to unban
+```
+_Simply unbans a socket or ip_
+
+__Example__ unbanning a ip in string format
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
