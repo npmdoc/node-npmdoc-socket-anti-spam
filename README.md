@@ -1,4 +1,7 @@
-# api documentation for  [socket-anti-spam (v1.1.8)](https://github.com/michaeldegroot/socket-anti-spam#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-socket-anti-spam.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-socket-anti-spam) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-socket-anti-spam.svg)](https://travis-ci.org/npmdoc/node-npmdoc-socket-anti-spam)
+# npmdoc-socket-anti-spam
+
+#### basic api documentation for  [socket-anti-spam (v1.1.8)](https://github.com/michaeldegroot/socket-anti-spam#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-socket-anti-spam.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-socket-anti-spam) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-socket-anti-spam.svg)](https://travis-ci.org/npmdoc/node-npmdoc-socket-anti-spam)
+
 #### This module prevents socket.emit spams by clients via ip bans
 
 [![NPM](https://nodei.co/npm/socket-anti-spam.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/socket-anti-spam)
@@ -73,7 +76,8 @@
         "coveralls": "npm bin /istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/* && node node_modules/coveralls/bin/coveralls.js < coverage/lcov.info",
         "test": "mocha"
     },
-    "version": "1.1.8"
+    "version": "1.1.8",
+    "bin": {}
 }
 ```
 
